@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EVEPSSY</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/bootstrap.css">
+
+    <script src="js/jquery-1.11.1.js"></script>
+    <script src="js/wow.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <link rel="stylesheet" href="css/animate.min.css">
+    <style>
+        header #logo{
+            display: inline-block;
+            width: 103px;
+            height:60px;
+            background: url("images/logo.png") no-repeat;
+            margin-left: 20px;
+        }
+        header .glyphicon{
+            position: absolute;
+            top:27px;
+            right:60px;
+            color: #fff;
+            float: right;
+        }
+        .navbar-inverse{
+            border: none;
+            background:rgba(43,43,43);
+        }
+        .navbar-inverse .navbar-toggle {
+             border:none;
+        }
+        .navbar-toggle{
+            padding: 17px 10px;
+        }
+        header .navbar{
+            /*padding-left:20px;*/
+            z-index: 9999;
+            position: fixed;
+            width: 100%;
+        }
+        /*banner区域*/
+        section .banner{
+            min-height:440px;
+            background: url("images/banner.jpg") no-repeat;
+            background-size: cover;
+        }
+        .ban_w{
+            border: 2px solid #fff;
+            height:170px;
+            margin-top:150px;
+            color: #fff;
+        }
+        .btn{
+            background: rgba(255,255,255,0.3);
+        }
+        .btn:hover{
+            background: rgba(255,255,255,0.8);
+        }
+        .row-h{
+            font-size: 20px;
+        }
+        .row-p{
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /*banner区域小箭头*/
+        .col-md-1{
+            height: 40px;
+            position: absolute;
+            top: 370px;
+            left:50%;
+            overflow: hidden;
+        }
+        .col-md-1 .glyphicon{
+            animation: jt 2s infinite linear;
+            color: #fff;
+        }
+        @keyframes jt{
+            0%{transform: translateY(0px);}
+            80%{transform: translateY(38px);}
+            100%{transform: translateY(0px)}
+        }
+        /*ABOUT 区域*/
+        .about{
+            height:276px;
+            background: #333;
+        }
+        .about .container .row{
+            color: #fff;
+            margin-top:40px;
+            text-align: center;
+        }
+        .about .container .row h4{
+            margin-top:30px;
+            color: #d3d3d3;
+        }
+        .about .container .row p{
+            margin-top:20px;
+            line-height: 25px;
+            color: #a9a9a9;
+            height: 50px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        /*want区域*/
+        .want .col-md-6{
+            /*height: 450px;*/
+            padding: 0px;
+        }
+        .want .row{
+            margin: 0;
+        }
+        .want .col-md-6 .col-md-12{
+            padding: 0px;
+            height:422px;
+            width: 100%;
+        }
+        .want .welcome{
+            padding-left: 100px;
+            padding-top:50px;
+            padding-right: 50px;
+        }
+        .want .welcome p{
+            border-left:1px solid #c1c1c1;
+            color: #c1c1c1;
+            padding-left:20px;
+            margin-left: -20px;
+            line-height: 25px;
+            height:50px;
+            overflow: hidden;
+        }
+        .want .welcome .btn{
+            margin-top: 10px;
+            background: #fff;
+            border: 1px solid #999;
+            border-radius: 20px;
+            color: #999999;
+            transition: all 0.4s;
+            margin-bottom: 20px;
+        }
+        .want .welcome .btn:hover{
+            color: #333;
+        }
+        /*折扣join区域*/
+        .join{
+            height:142px;
+            background: rgb(181,18,18);
+            color: #fff;
+        }
+        .join .row h1{
+            margin-top: 30px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        /*食物 foot 区域*/
+        .foot{
+            padding-top:10px;
+            padding-bottom: 60px;
+            background: #333;
+        }
+        .foot .col-md-4{
+            margin-top:25px;
+            box-sizing: border-box;
+        }
+        .foot .col-md-4 .foot_1{
+            height:100%;
+            width: 100%;
+            border: 1px solid #fff;
+            position: relative;
+            overflow: hidden;
+        }
+        .foot .col-md-4 .foot_1 .contant{
+            position: absolute;
+            top:0;
+            height:100%;
+            width: 100%;
+            background: rgba(0,0,0,0.82);
+            transition: all 0.5s;
+            padding: 40px;
+            text-align: center;
+        }
+        .foot .col-md-4 img{
+            height:298px;
+            width:100%;
+            transition: all 0.5s;
+        }
+        .foot .col-md-4 .foot_1:hover .contant{
+            transform: scale(1) rotate(0deg);
+            color: #999;
+        }
+        .foot .col-md-4 .foot_1:hover img{
+            transform: scale(0);
+        }
+        /*行业优势 container*/
+        .industry{
+            background: rgb(235,235,235);
+        }
+        .industry .col-md-12{
+            text-align: center;
+            height: 100px;
+            padding-top: 45px;
+        }
+        .industry .col-md-4{
+            padding: 0;
+        }
+        .industry .col-md-4{
+            /*overflow: hidden;*/
+        }
+        .industry .container .row .my_img{
+            padding-left:15px;
+
+        }
+        .industry .col-md-4 .my-ig{
+            height: 100%;
+            margin-top: 45px;
+        }
+        .industry .ctn{
+            list-style: none;
+            padding-left: 0;
+            height: 395px;
+        }
+        .industry .ctn li{
+            height:105px;
+            margin-top:40px;
+        }
+        .industry .ctn li:first-child,.industry .ctn li:last-child{
+            margin-right:0px;
+        }
+        .industry .ctn li .img-circle{
+            height:90px;
+            width: 90px;
+            float: right;
+            margin-top: 0px;
+            margin-left: 10px;
+        }
+        .industry .ctn li h1{
+            float: right;
+        }
+        .industry .ctn li p{
+            float: right;
+            width: 65%;
+            font-size: 12px;
+        }
+        .industry .ctn1 li:first-child,.industry .ctn1 li:last-child{
+            margin-left:0px;
+            margin-right: 0px;
+        }
+        .industry .ctn1 li .img-circle{
+            float: left;
+            margin-right:10px;;
+        }
+        .industry .ctn1 li p{
+            float: left;
+        }
+        .industry .ctn1 li h1{
+            float: left;
+        }
+        /*菜单menu区域*/
+        .menu{
+            padding:40px 0;
+        }
+        .menu .menu-1 .read{
+            height: 200px;
+            width: auto;
+            position: relative;
+            float: left;
+        }
+        .menu .col-md-3, .menu col-sm-6, .menu col-xs-6, .menu .col-md-12{
+            padding: 0px;
+            background: #f0f0f0;
+        }
+        .menu h5 , .menu p ,.menu span ,.menu .menu-1 .read>a{
+            padding: 0 20px ;
+            overflow: hidden;
+            display: block;
+            transition: all 0.2s;
+            position: relative;
+            z-index: 10;
+        }
+        .menu h5{
+            font-weight: bolder;
+            margin-top:20px;
+            height:45px;
+            font-size: 16px;
+            line-height: 23px;
+        }
+        .menu p{
+            font-size: 12px;
+            height:60px;
+            line-height: 20px;
+        }
+        .menu span,.menu a{
+            color: #999;
+            font-size: 12px;
+            line-height: 25px;
+        }
+        .menu .menu_img{
+            height:200px;
+            width: 100%;
+            overflow:hidden;
+            float: left;
+        }
+        .menu .menu-1{
+            position: relative;
+        }
+        .menu .menu_img img{
+            width: 110%;
+            height:110%;
+            margin-left: -5%;
+            margin-top:-3%;
+            transition: all 0.4s;
+        }
+        .menu .menu-1 .show{
+            height: 200px;
+            width: 0%;
+            background: #999;
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 5;
+            transition: all 0.4s;
+        }
+        .menu .menu-1 .read:hover .show{
+            width: 100%;
+        }
+        .menu .menu-1:hover img{
+            transform: scale(0.92);
+        }
+        .menu .menu-1 .read:hover{
+            color: #fff;
+        }
+        .menu .menu-1 .read:hover span{
+            color: #fff;
+        }
+        .menu .menu-1 .read:hover a{
+            color: #fff;
+        }
+        /*新闻部分*/
+        .news{
+            width: 100%;
+            height: 541px;
+            background: #56636A;
+            position: relative;
+        }
+        .news .col-md-4{
+
+        }
+        .news .news-1{
+            height: 463px;
+            list-style: none;
+            margin-top: 42px;
+            padding: 0;
+            position: relative;
+            left: 0;
+            overflow: hidden;
+        }
+        .news .news-1 li{
+            height: 100%;
+            float: left;
+        }
+        .news .news-1 li .news-con{
+            height: 100%;
+            width: 100%;
+            background-color: #fff;
+        }
+        .news .news-1 li .news-con .nows_t{
+            height: 50%;
+            width: 100%;
+            overflow: hidden;
+        }
+        .news .news-1 li .news-con .nows_t img{
+            width: 100%;
+            transition: all 0.4s;
+            height: 100%;
+        }
+        .news .news-1 li .news-con .nows_t:hover img{
+            transform: scale(1.03);
+        }
+        .news .news-1 li .news-con .nows_b{
+            height: 50%;
+            width: 100%;
+            padding: 30px;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .news .news-1 li .nows_b span{
+            color: rgba(0,0,0,0.3);
+            position: absolute;
+            bottom: 30px;
+        }
+        .news .news-1 li .nows_b p{
+            line-height: 22px;
+        }
+        /*脚 footer*/
+        .contact{
+            width: 100%;
+            height: auto;
+            background: rgba(43,43,43,1);
+            color: #999;
+            display: none;
+        }
+        .contact .contact1 img{
+            margin-top:20px;
+        }
+        .contact .contact1 p{
+            margin-top: 20px;
+            line-height: 25px;
+            font-size: 12px;
+        }
+        .contact .contact2{
+            padding-left:30px;
+        }
+        .contact h4{
+            margin-top:40px;
+        }
+        .contact  a{
+            display: block;
+            margin-top:10px;
+            color: #999;
+        }
+        .contact a i{
+            color: #fff;
+            font-size: 10px;
+            margin-right: 5px;
+        }
+        .contact .contact3 input{
+            margin-bottom: 7px;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid #999;
+            height: 35px;
+            padding-left: 10px;
+            border-radius: 0px;
+        }
+        .contact .contact3 button{
+            height: 35px;
+            line-height: 25px;
+            margin-top: 8px;
+            color: #fff;
+            background: rgb(153, 153, 153);
+            letter-spacing: 20px;
+        }
+        .contact .contact3 button:hover{
+            background: #6b6b6b;
+        }
+        .contact .contact4 img{
+            margin-top: 3px;
+            margin-bottom:20px;
+        }
+        /*版权*/
+        .copyright{
+            height:50px;
+            width: 100%;
+            background: rgba(0,0,0,0.9);
+        }
+        .copyright p{
+            line-height: 50px;
+            color: #999;
+            float: left;
+        }
+        @media (min-width: 768px){
+            .navbar-inverse{
+                border: none;
+                background:transparent;
+            }
+            header .navbar{
+                padding-left:10px;
+                border-radius: 0px;
+            }
+            header .navbar-left{
+                margin-left:52px;
+                margin-top:16px;
+            }
+            .navbar-nav > li > a {
+                padding-top: 8px;
+                padding-bottom: 8px;
+                padding-left: 8px;
+                padding-right:8px;
+            }
+            .navbar-inverse .navbar-nav > li > a{
+                color: #fff;
+            }
+            .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus{
+                background-color: #999;
+            }
+            .navbar-collapse {
+                padding-right: 0px;
+            }
+            /*banner区域*/
+            section .banner{
+                min-height:660px;
+            }
+            .ban_w{
+                height:250px;
+                margin-top:20%;
+            }
+            .row-h{
+                margin-top: 40px;
+                font-size: 30px;
+            }
+            .col-md-1{
+                top: 90%;
+            }
+            /*want区域*/
+            .want .welcome p{
+                height:auto;
+            }
+            /*食物 foot区域*/
+            .foot .col-md-4 .foot_1 .contant{
+                transform: scale(0) rotate(-90deg);
+            }
+            /*行业优势 container*/
+            .industry .ctn li:first-child,.industry .ctn li:last-child{
+                margin-right:-35px;
+            }
+            .industry .ctn1 li:first-child,.industry .ctn1 li:last-child{
+                margin-left:-35px;
+                margin-right: 0px;
+            }
+            .contact{
+                display: block;
+            }
+        }
+        @media (min-width: 1000px){
+            header .navbar{
+                padding-left:60px;
+            }
+            .navbar-collapse {
+                padding-right: 15px;
+            }
+            header .navbar-left {
+                margin-left:100px;
+            }
+            .nav > li > a {
+                padding: 10px 15px;
+            }
+            /*红色部分加入我们 join*/
+            .join .row .btn{
+                float: right;
+                margin-top:-20px;
+                margin-right: 80px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-inverse">
+        <div class="navbar-header">
+            <!--按钮-->
+            <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mynav">
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+            </button>
+            <!--logo区域-->
+            <a href="#" id="logo"></a>
+        </div>
+        <div class="collapse navbar-collapse " id="mynav">
+            <ul class="nav navbar-nav navbar-left">
+                <li class="active"><a href="#">首页</a></li>
+                <li><a href="#">产品中心</a></li>
+                <li><a href="#">关于我们</a></li>
+                <li><a href="#">服务支持</a></li>
+                <li><a href="#">品牌介绍</a></li>
+                <li><a href="#">新闻中心</a></li>
+                <li><a href="#">视频简介</a></li>
+                <li><a href="#">联系我们</a> </li>
+            </ul>
+        </div>
+        <i class="glyphicon glyphicon-search"></i>
+    </nav>
+</header>
+<section>
+    <div class="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-xs-6  col-md-offset-3 col-sm-offset-3 col-xs-offset-3 ban_w wow rubberBand">
+                    <h2 class="row-h">EVEPSSY ,健康，安全，美味！</h2>
+                    <p class="row-p text-nowrap">一套完美的消费体验！</p>
+                    <button type="button" class="btn">查看更多</button>
+                </div>
+                <div class="col-md-1">
+                    <span class="glyphicon glyphicon-menu-down"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about">
+        <div class="container">
+            <div class="row">
+                <h1>关于</h1>
+                <h4>满足您的要求，小心处理您的需求</h4>
+                <p>我们的商店不仅仅是另一个在线零售商。我们不仅销售高品质的产品，
+                    而且为我们的客户提供了积极的在线购物体验。忘记一劳永逸地做一切：
+                    照顾家庭，经营你的事，走狗，清房，做购物等...</p>
+            </div>
+        </div>
+    </div>
+    <div class="want">
+            <div class="row">
+                <div class="col-md-6 welcome">
+                    <h2>欢迎来到我们的网站！</h2>
+                    <p>我们为患病严重的家庭提供情感和实际的支持。无论诊断情况如何，
+                        我们都能全天候提供全天候的支持，只要有需要，我们将为患病儿童的
+                        家庭提供情感和实际的支持。无论诊断如何，我们全天候提供全系列的支持，只要需要。
+                    </p>
+                    <button class="btn">阅读更多</button>
+                </div>
+                <div class="col-md-6">
+                    <a href="#"> <img class="col-md-12" src="images/want01.jpg"></a>
+                </div>
+                <div class="col-md-6">
+                    <a href="#"> <img class="col-md-12" src="images/want01.jpg"></a>
+                </div>
+                <div class="col-md-6 welcome">
+                    <h2>我们 做什么</h2>
+                    <p>无论遇到什么挑战，我们致力于提供实用，持久的成果，并为客户提供成长和引领业务。
+                        我们为患病严重的家庭提供情感和实际的支持。无论诊断情况如何，我们都能全天候提供全天候的支持，
+                        只要有需要，我们将为患病儿童的家庭提供情感和实际的支持。无论诊断如何，我们全天候为全家提供支持。
+                    </p>
+                    <button class="btn">阅读更多</button>
+                </div>
+            </div>
+        </div>
+    <div class="join">
+        <div class="container">
+            <div class="row">
+                <h1>参加折扣运动</h1>
+                <button class="btn btn-lg">联系我们</button>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="foot_1">
+                        <img src="images/foot01.jpg">
+                        <div class="contant">
+                            <h4>西点</h4>
+                            <p>香百林西点是一件爱主要做面包甜点的小店。
+                                门脸不大，但是有限的空间里收拾的很利落，看起来干净大方。
+                                面包西点做的种类很多，蝴蝶酥、泡芙味道都很不错，甜甜软软的，
+                                入口有种幸福的感觉。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="foot_1">
+                        <img src="images/foot02.jpg">
+                        <div class="contant">
+                            <h4>西点</h4>
+                            <p>香百林西点是一件爱主要做面包甜点的小店。
+                                门脸不大，但是有限的空间里收拾的很利落，看起来干净大方。
+                                面包西点做的种类很多，蝴蝶酥、泡芙味道都很不错，甜甜软软的，
+                                入口有种幸福的感觉。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="foot_1">
+                        <img src="images/foot03.jpg">
+                        <div class="contant">
+                            <h4>西点</h4>
+                            <p>香百林西点是一件爱主要做面包甜点的小店。
+                                门脸不大，但是有限的空间里收拾的很利落，看起来干净大方。
+                                面包西点做的种类很多，蝴蝶酥、泡芙味道都很不错，甜甜软软的，
+                                入口有种幸福的感觉。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="foot_1">
+                        <img src="images/foot04.jpg">
+                        <div class="contant">
+                            <h4>西点</h4>
+                            <p>香百林西点是一件爱主要做面包甜点的小店。
+                                门脸不大，但是有限的空间里收拾的很利落，看起来干净大方。
+                                面包西点做的种类很多，蝴蝶酥、泡芙味道都很不错，甜甜软软的，
+                                入口有种幸福的感觉。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="foot_1">
+                        <img src="images/foot05.jpg">
+                        <div class="contant">
+                            <h4>西点</h4>
+                            <p>香百林西点是一件爱主要做面包甜点的小店。
+                                门脸不大，但是有限的空间里收拾的很利落，看起来干净大方。
+                                面包西点做的种类很多，蝴蝶酥、泡芙味道都很不错，甜甜软软的，
+                                入口有种幸福的感觉。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6 col-xs-12">
+                    <div class="foot_1">
+                        <img src="images/foot06.jpg">
+                        <div class="contant">
+                            <h4>西点</h4>
+                            <p>香百林西点是一件爱主要做面包甜点的小店。
+                                门脸不大，但是有限的空间里收拾的很利落，看起来干净大方。
+                                面包西点做的种类很多，蝴蝶酥、泡芙味道都很不错，甜甜软软的，
+                                入口有种幸福的感觉。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="industry">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>行业优势</h1>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <ul class="ctn">
+                        <li>
+                            <img src="images/container01.jpg" class="img-circle">
+                            <h4 class="text-right ">定制</h4>
+                            <p class="text-right ">滑动系统适用于滑动玻璃门的门重量高达30kg至150kgs</p>
+                        </li>
+                        <li>
+                            <img src="images/container02.jpg" class="img-circle">
+                            <h4 class="text-right ">我们的队伍</h4>
+                            <p class="text-right "> 专业研发（ORM和ODM）团队定制您的私人需求; 一个专门为设计包装和标志的团队。专业研发（ORM和ODM）团队定制。</p>
+                        </li>
+                        <li>
+                            <img src="images/container03.jpg" class="img-circle">
+                            <h4 class="text-right ">质量</h4>
+                            <p class="text-right "> 质量好：我们有规范的生产流程。我们的产品是根据客户需要制造的。良好的品质：我们有标准化</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-sm-12 my_img">
+                    <img src="images/container20.jpg" class="img-responsive img-circle my-ig">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <ul class="ctn ctn1">
+                        <li>
+                            <img src="images/container31.jpg" class="img-circle">
+                            <h4 class="text-left ">经验</h4>
+                            <p class="text-left "> 出口经验丰富，确保货物畅通国内流通，出口经验丰富，货物畅通国内畅销。</p>
+                        </li>
+                        <li>
+                            <img src="images/container32.jpg" class="img-circle">
+                            <h4 class="text-left ">质量保证使用寿命长</h4>
+                            <p class="text-left ">  制定可靠的质量保证体系，使产品更加稳定和竞争。制定可靠的质量保证体系，使产品更加稳定和竞争。</p>
+                        </li>
+                        <li>
+                            <img src="images/container33.jpg" class="img-circle">
+                            <h4 class="text-left ">可靠的ODM功能</h4>
+                            <p class="text-left ">我们有能力提供符合客户规格和个人需求的定制理念。</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6 col-xs-6 menu-1">
+                    <div class="read">
+                        <h5>我们还提供一个新的特别菜单，这一天。</h5>
+                        <p>参观我们舒适浪漫的餐厅庆祝今年的恋人节！每年我们都在为这个场合介绍一些新的
+                            主题派对，这一次，情人节将在巴黎的装潢中设置！</p>
+                        <span>2016-12-02</span>
+                        <a href="#">阅读更多</a>
+                        <div class="show"></div>
+                    </div>
+
+                    <div class="menu_img col-md-12">
+                        <a href="#"><img src="images/menu01.jpg" class=""></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6 menu-1">
+                    <div class="menu_img col-md-12">
+                        <a href="#"><img src="images/menu01.jpg" class=""></a>
+                    </div>
+                    <div class="read">
+                        <h5>我们还提供一个新的特别菜单，这一天。</h5>
+                        <p>参观我们舒适浪漫的餐厅庆祝今年的恋人节！每年我们都在为这个场合介绍一些
+                            新的主题派对，这一次，情人节将在巴黎的装潢中设置！</p>
+                        <span>2016-12-02</span>
+                        <a href="#">阅读更多</a>
+                        <div class="show"></div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6 menu-1">
+                    <div class="read">
+                        <h5>我们还提供一个新的特别菜单，这一天。</h5>
+                        <p>参观我们舒适浪漫的餐厅庆祝今年的恋人节！每年我们都在为这个场合介绍一些新的主题派
+                            对，这一次，情人节将在巴黎的装潢中设置！</p>
+                        <span>2016-12-02</span>
+                        <a href="#">阅读更多</a>
+                        <div class="show"></div>
+                    </div>
+
+                    <div class="menu_img col-md-12">
+                        <a href="#"><img src="images/menu01.jpg" class=""></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6 col-xs-6 menu-1">
+                    <div class="menu_img col-md-12">
+                        <a href="#"><img src="images/menu01.jpg" class=""></a>
+                    </div>
+                    <div class="read">
+                        <h5>我们还提供一个新的特别菜单，这一天。</h5>
+                        <p>参观我们舒适浪漫的餐厅庆祝今年的恋人节！每年我们都在为这个场合介绍一些新
+                            的主题派对，这一次，情人节将在巴黎的装潢中设置！</p>
+                        <span>2016-12-02</span>
+                        <a href="#">阅读更多</a>
+                        <div class="show"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="news">
+        <div class="container">
+            <div class="row">
+                <ul class="news-1">
+                    <li class="col-md-4 col-sm-6">
+                        <div class="news-con">
+                            <div class="nows_t">
+                                <img src="images/new-01.jpg">
+                            </div>
+                            <div class="nows_b">
+                                <h4>绿色有机</h4>
+                                <p>食品主要通过自然降水、施用农家肥人工除草等传统的农业，含有丰富的碳水化合物、
+                                    维生素和微量元素。精选全球优质有机蔬菜,产地直采,严格质检!</p>
+                                <span><i class="glyphicon glyphicon-calendar"></i>20-05 2017</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-4 col-sm-6">
+                        <div class="news-con">
+                            <div class="nows_t">
+                                <img src="images/new-02.jpg">
+                            </div>
+                            <div class="nows_b">
+                                <h4>绿色有机</h4>
+                                <p>食品主要通过自然降水、施用农家肥人工除草等传统的农业，含有丰富的碳水化合物、
+                                    维生素和微量元素。精选全球优质有机蔬菜,产地直采,严格质检!</p>
+                                <span><i class="glyphicon glyphicon-calendar"></i>20-05 2017</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-4 col-sm-6">
+                        <div class="news-con">
+                            <div class="nows_t">
+                                <img src="images/new-03.jpg">
+                            </div>
+                            <div class="nows_b">
+                                <h4>绿色有机</h4>
+                                <p>食品主要通过自然降水、施用农家肥人工除草等传统的农业，含有丰富的碳水化合物、
+                                    维生素和微量元素。精选全球优质有机蔬菜,产地直采,严格质检!</p>
+                                <span><i class="glyphicon glyphicon-calendar"></i>20-05 2017</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="col-md-4 col-sm-6">
+                        <div class="news-con">
+                            <div class="nows_t">
+                                <img src="images/new-03.jpg">
+                            </div>
+                            <div class="nows_b">
+                                <h4>绿色有机</h4>
+                                <p>食品主要通过自然降水、施用农家肥人工除草等传统的农业，含有丰富的碳水化合物、
+                                    维生素和微量元素。精选全球优质有机蔬菜,产地直采,严格质检!</p>
+                                <span><i class="glyphicon glyphicon-calendar"></i>20-05 2017</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<footer>
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="contact1 col-md-3 col-sm-6">
+                    <img src="images/f-logo.png">
+                    <p>
+                        联系人：Juzz He<br>
+                        电话：（+86）13885223550<br>
+                        电子邮件：example@allweyes.com<br>
+                        WHATSAPP：13885223550<br>
+                        办公地址：水利市越秀区5A光兴英晶大厦119号
+                    </p>
+                </div>
+                <div class="contact2 col-md-3 col-sm-6">
+                    <h4>快速链接</h4>
+                    <a href="#"><i class="glyphicon glyphicon-menu-right"></i>特征</a>
+                    <a href="#"><i class="glyphicon glyphicon-menu-right"></i>关于</a>
+                    <a href="#"><i class="glyphicon glyphicon-menu-right"></i>画廊</a>
+                    <a href="#"><i class="glyphicon glyphicon-menu-right"></i>技能</a>
+                    <a href="#"><i class="glyphicon glyphicon-menu-right"></i>球队</a>
+                    <a href="#"><i class="glyphicon glyphicon-menu-right"></i>联系我们</a>
+                </div>
+                <div class="contact3 col-md-3 col-sm-6">
+                    <h4>留言</h4>
+                    <input type="text" class="form-control" placeholder="Name">
+                    <input type="text" class="form-control" placeholder="E-mail">
+                    <input type="text" class="form-control" placeholder="Content">
+                    <button class="btn btn-block">提交</button>
+                </div>
+                <div class="contact4 col-md-3 col-sm-6">
+                    <h4>新闻中心</h4>
+                    <a href="#"><i class="glyphicon glyphicon-menu-right"></i>订阅我们的每周小册子！</a>
+                    <a href="#"><i class="glyphicon glyphicon-menu-right"></i>尊重你的隐私</a>
+                    <img src="images/footer.jpg">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="copyright">
+        <div class="container">
+            <div class="row">
+                <p>版权所有©2016 Design by www.allweyes.com</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+<script>
+    window.onscroll=function(){
+        var scrollTop =  window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+        if(scrollTop>=100){
+            document.getElementsByClassName('navbar-inverse')[0].style.background='rgba(43,43,43,0.7)';
+        }else{
+            document.getElementsByClassName('navbar-inverse')[0].style.background='transparent';
+        }
+    }
+
+    //banner区域 方块动画
+    $(".my_img").css("height",$(".my_img").width()+"px");
+    $(window).resize(function () {
+        $(".my_img").css("height",$(".my_img").width()+"px");
+    })
+    new WOW().init();
+
+
+
+    //新闻轮播
+   /* $(function(){
+        $('.news-1').on('click',function(e){
+            var w=e.pageX;
+            $(this).mousedown(function(e){
+                var w1=$(this).css('left').substring(0,$(this).css('left').length-2);
+                if(w1>0){
+                    w1=$(this).css('left','0px')
+                }else{
+                    w1=$(this).css('left',e.pageX-w+'px')
+                }
+            });
+        });
+    })
+
+    $(function(){
+        $('.news-1').on()
+    });*/
+</script>
+</html>
